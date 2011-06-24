@@ -7,13 +7,11 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>Home Budget Webapp</name>
 	<url>http://maven.apache.org</url>
-
 	<parent>
 		<groupId>org.obfly.hb</groupId>
 		<artifactId>home-budget</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -21,8 +19,25 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<version>1.4.17</version>
+			<artifactId>wicket</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>hb-webapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
+				<configuration>
+					<stopPort>9966</stopPort>
+					<stopKey>foo</stopKey>
+				</configuration>
+
+			</plugin>
+		</plugins>
 	</build>
 </project>
